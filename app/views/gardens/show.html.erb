@@ -8,3 +8,22 @@
 
 <%= link_to 'Edit', edit_garden_path(@garden) %> |
 <%= link_to 'Back', gardens_path %>
+
+<div class="container">
+  <div class="row">
+    <% @garden.plants.each do |plant| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= plant.image_url %>);">
+          <div class="card-description">
+            <h2><%= plant.name %></h2>
+          </div>
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= link_to 'Plant a Plant', new_garden_plant_path(@garden) %>
+</div>

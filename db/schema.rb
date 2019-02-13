@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_155345) do
+ActiveRecord::Schema.define(version: 2019_02_13_160536) do
 
   create_table "gardens", force: :cascade do |t|
     t.string "name"
     t.string "banner_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.integer "garden_id"
+    t.string "name"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_plants_on_garden_id"
   end
 
 end

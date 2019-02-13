@@ -20,6 +20,13 @@ class PlantsController < ApplicationController
     end
   end
 
+  def destroy
+    @plant = Plant.find(params[:id])
+    @garden = @plant.garden
+    @plant.destroy
+    redirect_to garden_path(@garden)
+  end
+
   private
   #   # Use callbacks to share common setup or constraints between actions.
   #   def set_garden

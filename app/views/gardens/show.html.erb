@@ -17,7 +17,7 @@
           <div class="card-description">
             <h2><%= plant.name %></h2>
           </div>
-          <a class="card-link" href="#" ></a>
+          <%= link_to 'Destroy Plant', plant_path(plant), method: :delete, data: { confirm: "yes or no?" }, class: "card-link" %>
         </div>
       </div>
     <% end %>
